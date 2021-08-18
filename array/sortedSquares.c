@@ -6,7 +6,7 @@
 /*   By: olabrecq <olabrecq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/11 11:23:48 by olabrecq          #+#    #+#             */
-/*   Updated: 2021/08/16 09:16:24 by olabrecq         ###   ########.fr       */
+/*   Updated: 2021/08/18 14:54:57 by olabrecq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,14 +63,14 @@ int* sortedSquares(int* nums, int numsSize, int* returnSize)
     int i = 0;
     int *arr;
     
-    arr = returnSize;
+    arr = malloc(sizeof(int) * (numsSize));
     while (i < numsSize)
     {
         nums[i] *= nums[i];
         i++;
     }
-    arr = malloc(sizeof(int) * (numsSize));
     arr = selection_sort(nums, numsSize);
+    *returnSize = numsSize;
     return (arr);
     
 }
