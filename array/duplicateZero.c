@@ -6,7 +6,7 @@
 /*   By: olabrecq <olabrecq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/18 15:37:18 by olabrecq          #+#    #+#             */
-/*   Updated: 2021/08/22 11:39:15 by olabrecq         ###   ########.fr       */
+/*   Updated: 2021/08/22 11:42:44 by olabrecq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void ft_shift(int *arr, int position, int arrSize)
     i = 0;
     while (arrSize --> position)
     {
-        arr[i] = arr[i - 1];       
+        arr[arrSize] = arr[arrSize - 1];       
     }
 }
 
@@ -39,6 +39,6 @@ void duplicateZeros(int* arr, int arrSize)
     i = 0;
     while (i < arrSize)
     {
-        i += arr[i] ? 1 : (ft_shift(arr, i + 1, arrSize), 2);
+        i += (arr[i]) ? 1 : (ft_shift(arr, i + 1, arrSize), 2);
     }
 }
