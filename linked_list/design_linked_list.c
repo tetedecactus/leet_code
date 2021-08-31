@@ -6,7 +6,7 @@
 /*   By: olabrecq <olabrecq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 09:38:46 by olabrecq          #+#    #+#             */
-/*   Updated: 2021/08/31 09:52:18 by olabrecq         ###   ########.fr       */
+/*   Updated: 2021/08/31 10:09:30 by olabrecq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,12 +55,12 @@ typedef struct s_MyLinkedList
 
 /** Initialize your data structure here. */
 
-t_MyLinkedList* myLinkedListCreate() 
+t_MyLinkedList *myLinkedListCreate() 
 {
     t_MyLinkedList *new;
 
     new = malloc(sizeof(t_MyLinkedList));
-    if (!new)
+    if (new == NULL)
 		return (NULL);
     new->next = NULL;
     
@@ -68,31 +68,42 @@ t_MyLinkedList* myLinkedListCreate()
 }
 
 /** Get the value of the index-th node in the linked list. If the index is invalid, return -1. */
-int myLinkedListGet(t_MyLinkedList* obj, int index) {
-  
+int myLinkedListGet(t_MyLinkedList *obj, int index) 
+{
+    t_MyLinkedList *cur;
+
+    cur = malloc(sizeof(t_MyLinkedList));
+    if(cur == NULL)
+        return (-1);
+    while (cur->x != obj->x)
+    {
+        cur = cur->next;
+        index++;
+    }
+    return (index);
 }
 
 /** Add a node of value val before the first element of the linked list. After the insertion, the new node will be the first node of the linked list. */
-void myLinkedListAddAtHead(t_MyLinkedList* obj, int val) {
+void myLinkedListAddAtHead(t_MyLinkedList *obj, int val) {
   
 }
 
 /** Append a node of value val to the last element of the linked list. */
-void myLinkedListAddAtTail(t_MyLinkedList* obj, int val) {
+void myLinkedListAddAtTail(t_MyLinkedList *obj, int val) {
   
 }
 
 /** Add a node of value val before the index-th node in the linked list. If index equals to the length of linked list, the node will be appended to the end of linked list. If index is greater than the length, the node will not be inserted. */
-void myLinkedListAddAtIndex(t_MyLinkedList* obj, int index, int val) {
+void myLinkedListAddAtIndex(t_MyLinkedList *obj, int index, int val) {
   
 }
 
 /** Delete the index-th node in the linked list, if the index is valid. */
-void myLinkedListDeleteAtIndex(t_MyLinkedList* obj, int index) {
+void myLinkedListDeleteAtIndex(t_MyLinkedList *obj, int index) {
   
 }
 
-void myLinkedListFree(t_MyLinkedList* obj) {
+void myLinkedListFree(t_MyLinkedList *obj) {
     
 }
 
