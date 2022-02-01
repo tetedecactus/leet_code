@@ -10,6 +10,8 @@ bool checkIfExist(int* arr, int arrSize){
     int d = 0;;
     
     while (i < arrSize) {
+        if (arr[i] == 0)
+            i++;
         d = arr[i] * 2;
         j = 0;
         while (j < arrSize) {
